@@ -66,14 +66,14 @@ function sanctuary_setup() {
 	 * See http://codex.wordpress.org/Post_Formats
 	 */
 	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link',
+		'aside'
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'sanctuary_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
+	// add_theme_support( 'custom-background', apply_filters( 'sanctuary_custom_background_args', array(
+	// 	'default-color' => 'ffffff',
+	// 	'default-image' => '',
+	// ) ) );
 }
 endif; // sanctuary_setup
 add_action( 'after_setup_theme', 'sanctuary_setup' );
@@ -101,6 +101,10 @@ add_action( 'widgets_init', 'sanctuary_widgets_init' );
  */
 function sanctuary_scripts() {
 	wp_enqueue_style( 'sanctuary-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'sanctuary-google-fonts', 'http://fonts.googleapis.com/css?family=Arvo:400,700|Open+Sans:400,700|Open+Sans+Condensed:300');
+
+	wp_enqueue_style( 'sanctuary-fontawesome', 'http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
 
 	wp_enqueue_script( 'sanctuary-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
