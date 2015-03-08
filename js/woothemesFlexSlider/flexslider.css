@@ -95,6 +95,7 @@ html[xmlns] .flexslider .slides {
   box-shadow: '' 0 1px 4px rgba(0, 0, 0, 0.2);*/
 }
 .flexslider .slides {
+  width: 960px;
   zoom: 1;
 }
 .flexslider .slides img {
@@ -311,7 +312,6 @@ p.flex-caption {
   float: right;
   margin-top: -279px;
   margin-right: 102px;
-  padding-right: 55px;
   font-family: 'Arvo', serif;
   font-size: 24px;
   text-transform: uppercase;
@@ -324,7 +324,6 @@ p.flex-tag {
   float: right;
   margin-top: -263px;
   margin-right: 23px;
-  padding-right: 68px;
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 30px;
   font-weight: 300;
