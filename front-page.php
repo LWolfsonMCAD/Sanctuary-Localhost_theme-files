@@ -83,6 +83,8 @@ get_header(); ?>
 	wp_reset_query();
 ?>
 
-
 		</main> <!-- #main -->
 	</div>  <!-- div -->
+
+
+<?php get_footer(); ?>	

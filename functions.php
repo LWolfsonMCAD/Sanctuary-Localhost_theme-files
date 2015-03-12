@@ -55,6 +55,10 @@ function sanctuary_setup() {
 		'primary' => __( 'Primary Menu', 'sanctuary' ),
 	) );
 
+	register_nav_menus( array(
+		'social' => __( 'Social Menu', 'sanctuary' ),
+	) );
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
