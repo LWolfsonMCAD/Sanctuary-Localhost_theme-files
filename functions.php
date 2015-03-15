@@ -59,6 +59,7 @@ function sanctuary_setup() {
 		'social' => __( 'Social Menu', 'sanctuary' ),
 	) );
 
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -165,6 +166,7 @@ if(!function_exists('sanctuary_register_javascripts')) {
 function sanctuary_register_javascripts() {
 	wp_deregister_script( 'jquery' );
 	wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', array(), '1.8.2');
+
 	wp_enqueue_script( 'jquery');
 
 	wp_register_script('flexslider', get_template_directory_uri().'/js/woothemesFlexSlider/jquery.flexslider.js', array('jquery'), '2.1');
@@ -176,4 +178,40 @@ function sanctuary_register_javascripts() {
 	}
 
 add_action('wp_enqueue_scripts', 'sanctuary_register_javascripts');
+}
+
+
+// Function to create Cabin post types
+add_action( 'init', 'create_post_types');
+
+function create_post_types() {
+ register_post_type( 'cabin', 
+ array(
+      'labels' => array(
+      	'name' => __( 'Studio Cabins' ),
+      	'singular_name' => __( 'Cabin' ),
+      	'add_new' => __( 'Add New' ),
+      	'add_new_item' => __( 'Add New Cabin' ),
+      	'edit' => __( 'Edit' ),
+      	'edit_item' => __( 'Edit Cabin' ),
+      	'new_item' => __( 'New Cabin' ),
+      	'view' => __( 'View Cabins' ),
+      	'view_item' => __( 'View Cabin' ),
+      	'search_items' => __( 'Search Studio Cabins' ),
+      	'not_found' => __( 'No Cabins found' ),
+      	'not_found_in_trash' => __( 'No Cabins found in Trash' ),
+      	'parent' => __( 'Studio Cabins' ),
+      ),
+ 'public' => true,
+      'menu_position' => 4,
+      'rewrite' => array('slug' => 'studio-cabins'),
+      'supports' => array( 'title', 'excerpt', 'thumbnail' ),
+      'taxonomies' => array('category', 'post_tag'),
+      'publicly_queryable' => true,
+      'show_ui' => true,
+      'query_var' => true,
+      'capability_type' => 'post',
+      'hierarchical' => false,
+     )
+  );
 }
