@@ -821,6 +821,11 @@ ul#menu-social-items.menu-items {
 	clear: both;
 }
 
+/*.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}*/
 /*--------------------------------------------------------------
 9.0 Widgets
 --------------------------------------------------------------*/
@@ -899,7 +904,6 @@ X.XX Footer
 10.0 Content
 --------------------------------------------------------------*/
 
-
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
@@ -935,18 +939,14 @@ X.XX Footer
 /*--------------------------------------------------------------
 10.1.1 Cabin Posts
 --------------------------------------------------------------*/
-.cabin-post-background {
-	position: absolute;
-	top: 0;
-	z-index: 0;
-}
-
 .cabin-breakdown {
 	position: relative;
+	clear: both;
 	width: 100%;
 	height: 578px;
 	padding-top: 40px;
 	background-color: #fff;
+	z-index: 10;
 }
 
 .cabin-post-gallery {
@@ -1035,6 +1035,12 @@ div#imagecustom.slideshow-image img {
 	font-weight: 400;
 	letter-spacing: 1px;
 	color: #fff;
+}
+
+.cabin-post-background {
+	position: absolute;
+	top: 0;
+	z-index: 1;
 }
 
 

@@ -5,18 +5,11 @@
 ?>
 <?php get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area group">
 		<main id="main" class="site-main" role="main">
 		
 
-		<?php while ( have_posts() ) : the_post(); ?>
-		
-		<div class="cabin-post-background">
-			<?php 
-				if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-				the_post_thumbnail();
-			} ?>	
-		</div>		
+		<?php while ( have_posts() ) : the_post(); ?>	
 
 		<div class="cabin-breakdown">
 
@@ -51,7 +44,16 @@
 				<div class="check-availability-button">
 					<?php the_field('check_availability'); ?>
 				</div>
-			</div>
+			</div>	
+		</div>	
+
+		<div class="cabin-post-background">
+			<?php 
+				if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+				the_post_thumbnail();
+			} ?>
+		</div>
+
 		</div>
 			<!-- <p><?php the_content(); ?></p> -->
 
